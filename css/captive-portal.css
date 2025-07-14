@@ -1,0 +1,245 @@
+/* Estilos para Portal Cautivo pfSense - Hotel PelaosSa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/fo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captive-container {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+  width: 90%;
+  padding: 45px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-container {
+  margin-bottom: 35px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #c9b037 0%, #e6d84f 50%, #c9b037 100%);
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(201, 176, 55, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.hotel-icon {
+  background: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
+  box-shadow: 0 15px 35px rgba(74, 144, 226, 0.4);
+}
+
+.logo i {
+  font-size: 48px;
+  color: white;
+}
+
+.business-name {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #c9b037 0%, #4a90e2 50%, #c9b037 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #4a90e2 0%, #c9b037 50%, #4a90e2 100%);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+}
+
+.login-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(74, 144, 226, 0.5);
+}
+
+.login-button:active {
+  transform: translateY(-1px);
+}
+
+.wifi-info {
+  margin-top: 35px;
+  padding: 25px;
+  background: linear-gradient(135deg, #4a90e2 0%, #c9b037 50%, #4a90e2 100%);
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+}
+
+.wifi-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.wifi-info p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.terms-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.terms-link a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.terms-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.captive-container {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .captive-container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  .business-name {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo i {
+    font-size: 40px;
+  }
+}
+
+/* Iconos personalizados para pfSense */
+.pfsense-icon {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.network-icon {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.security-icon {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+/* Efectos adicionales */
+.form-group input:valid {
+  border-color: #28a745;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+/* Indicador de carga */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.loading .login-button {
+  background: #ccc;
+}

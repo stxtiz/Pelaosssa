@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120" height="120">
+  <!-- Edificio del hotel -->
+  <rect x="150" y="100" width="212" height="350" fill="#4a90e2" stroke="#2c5aa0" stroke-width="3"/>
+  
+  <!-- Ventanas del hotel -->
+  <rect x="170" y="130" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="210" y="130" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="250" y="130" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="290" y="130" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="330" y="130" width="25" height="30" fill="#fff" opacity="0.9"/>
+  
+  <rect x="170" y="180" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="210" y="180" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="250" y="180" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="290" y="180" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="330" y="180" width="25" height="30" fill="#fff" opacity="0.9"/>
+  
+  <rect x="170" y="230" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="210" y="230" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="250" y="230" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="290" y="230" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="330" y="230" width="25" height="30" fill="#fff" opacity="0.9"/>
+  
+  <rect x="170" y="280" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="210" y="280" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="250" y="280" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="290" y="280" width="25" height="30" fill="#fff" opacity="0.9"/>
+  <rect x="330" y="280" width="25" height="30" fill="#fff" opacity="0.9"/>
+  
+  <!-- Entrada principal -->
+  <rect x="225" y="380" width="62" height="70" fill="#8b4513" stroke="#654321" stroke-width="2"/>
+  
+  <!-- Puerta -->
+  <rect x="235" y="390" width="42" height="60" fill="#654321"/>
+  <circle cx="270" cy="420" r="3" fill="#ffd700"/>
+  
+  <!-- Letrero del hotel -->
+  <rect x="180" y="50" width="152" height="40" fill="#2c5aa0" stroke="#1a4480" stroke-width="2" rx="5"/>
+  <text x="256" y="75" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">HOTEL</text>
+  
+  <!-- Estrella decorativa -->
+  <polygon points="256,25 260,35 270,35 262,42 266,52 256,46 246,52 250,42 242,35 252,35" fill="#ffd700" stroke="#e6c200" stroke-width="1"/>
+  
+  <!-- Base del edificio -->
+  <rect x="140" y="440" width="232" height="20" fill="#666" stroke="#444" stroke-width="2"/>
+  
+  <!-- Toldo de entrada -->
+  <path d="M 200 380 L 312 380 L 302 370 L 210 370 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  
+  <!-- Sombra -->
+  <ellipse cx="256" cy="470" rx="100" ry="15" fill="#000" opacity="0.2"/>
+</svg>
