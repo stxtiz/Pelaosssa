@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error de Acceso - Hotel PelaosSa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Estilos para Página de Error - Hotel PelaosSa */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("captiveportal-fo.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .error-container {
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        max-width: 520px;
+        width: 90%;
+        padding: 45px;
+        text-align: center;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        animation: fadeInError 0.8s ease-out;
+      }
+
+      .logo-container {
+        margin-bottom: 30px;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 35px rgba(74, 144, 226, 0.4);
+        border: 3px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .logo img {
+        border-radius: 50%;
+      }
+
+      .business-name {
+        color: #333;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(
+          135deg,
+          #c9b037 0%,
+          #4a90e2 50%,
+          #c9b037 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .error-icon {
+        font-size: 64px;
+        color: #ff6b6b;
+        margin-bottom: 25px;
+        animation: pulse 2s infinite;
+      }
+
+      .error-title {
+        color: #e74c3c;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .error-message {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding: 20px;
+        background: rgba(231, 76, 60, 0.1);
+        border-radius: 12px;
+        border-left: 4px solid #e74c3c;
+      }
+
+      .portal-messages {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+        animation: shake 0.5s ease-in-out;
+      }
+
+      .portal-messages i {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+
+      .error-details {
+        background: rgba(255, 193, 7, 0.1);
+        border: 2px solid #ffc107;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      .error-details h3 {
+        color: #f39c12;
+        font-size: 18px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .error-details h3 i {
+        margin-right: 10px;
+      }
+
+      .error-details ul {
+        color: #666;
+        padding-left: 20px;
+        line-height: 1.8;
+      }
+
+      .error-details li {
+        margin-bottom: 8px;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 16px 30px;
+        border: none;
+        border-radius: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          #4a90e2 0%,
+          #c9b037 50%,
+          #4a90e2 100%
+        );
+        color: white;
+        box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(74, 144, 226, 0.5);
+      }
+
+      .btn-secondary {
+        background: rgba(108, 117, 125, 0.1);
+        color: #6c757d;
+        border: 2px solid #6c757d;
+      }
+
+      .btn-secondary:hover {
+        background: #6c757d;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .contact-info {
+        margin-top: 30px;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #4a90e2 0%,
+          #c9b037 50%,
+          #4a90e2 100%
+        );
+        border-radius: 15px;
+        color: white;
+      }
+
+      .contact-info h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .contact-info p {
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      /* Animaciones */
+      @keyframes fadeInError {
+        from {
+          opacity: 0;
+          transform: translateY(50px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: translateX(-5px);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          transform: translateX(5px);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .error-container {
+          padding: 30px 20px;
+          margin: 20px;
+        }
+
+        .error-title {
+          font-size: 24px;
+        }
+
+        .business-name {
+          font-size: 24px;
+        }
+
+        .logo {
+          width: 80px;
+          height: 80px;
+        }
+
+        .error-icon {
+          font-size: 48px;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+        }
+      }
+
+      /* Efectos adicionales */
+      .highlight {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+        color: #d63031;
+      }
+
+      .loading {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      /* Countdown timer si se quiere agregar */
+      .countdown {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e74c3c;
+        margin: 10px 0;
+      }
+    </style>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZTc0YzNjIiBkPSJNNTA2LjMgNDE3bC0yMTMuMy0zNjRjLTE2LjMzLTI4LTU3LjU0LTI4LTczLjg3IDBMMTkuNyA0MTdDLTEzLjMgNDUwIDEwLjcgNTAxIDUwLjYyIDUwMWg0MjYuNzZjMzkuOTIgMCA2My45Mi01MSAzNy4wOC04NHoiLz48L3N2Zz4="
+    />
+  </head>
+  <body>
+    <div class="error-container">
+      <!-- Logo y Branding -->
+      <div class="logo-container">
+        <div class="logo">
+          <img
+            src="captiveportal-icono.jpg"
+            alt="Hotel PelaosSa"
+            style="width: 70px; height: 70px"
+          />
+        </div>
+        <h1 class="business-name">Hotel PelaosSa</h1>
+      </div>
+
+      <!-- Icono de Error -->
+      <div class="error-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+
+      <!-- Título del Error -->
+      <h1 class="error-title">Error de Autenticación</h1>
+
+      <!-- Mensaje de Error Principal -->
+      <div class="error-message">
+        <strong>Lo sentimos, no se pudo establecer la conexión WiFi.</strong>
+        <br />
+        Las credenciales proporcionadas no son válidas o han expirado.
+      </div>
+
+      <!-- Mensajes del Portal/RADIUS -->
+      <div class="portal-messages">
+        <i class="fas fa-info-circle"></i>
+        $PORTAL_MESSAGE$
+      </div>
+
+      <!-- Detalles del Error -->
+      <div class="error-details">
+        <h3>
+          <i class="fas fa-list-ul"></i>
+          Posibles causas del problema:
+        </h3>
+        <ul>
+          <li>
+            <strong>Usuario o contraseña incorrectos:</strong> Verifique que
+            haya ingresado sus credenciales correctamente
+          </li>
+          <li>
+            <strong>Credenciales expiradas:</strong> Su acceso temporal puede
+            haber vencido
+          </li>
+          <li>
+            <strong>Cuenta bloqueada:</strong> Demasiados intentos fallidos
+            pueden haber bloqueado su cuenta
+          </li>
+          <li>
+            <strong>Problema técnico:</strong> Error temporal del servidor de
+            autenticación
+          </li>
+        </ul>
+      </div>
+
+      <!-- Botones de Acción -->
+      <div class="action-buttons">
+        <a href="javascript:history.back()" class="btn btn-primary">
+          <i class="fas fa-arrow-left"></i>
+          Intentar Nuevamente
+        </a>
+        <a href="#" onclick="showHelp()" class="btn btn-secondary">
+          <i class="fas fa-question-circle"></i>
+          Solicitar Ayuda
+        </a>
+      </div>
+
+      <!-- Información de Contacto -->
+      <div class="contact-info">
+        <h3>
+          <i class="fas fa-concierge-bell"></i>
+          ¿Necesita Asistencia?
+        </h3>
+        <p>
+          <strong>Recepción 24/7:</strong> Extensión 0 desde su habitación<br />
+          <br />
+          Nuestro personal estará encantado de ayudarle con su conexión WiFi.
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal de Ayuda -->
+    <div id="helpModal" style="display: none" class="modal">
+      <div class="modal-content">
+        <h2>Centro de Ayuda - WiFi Hotel</h2>
+        <div class="modal-text">
+          <h3>Soluciones Rápidas:</h3>
+          <div style="text-align: left; margin: 20px 0">
+            <p><strong>1. Verificar Credenciales</strong></p>
+            <ul>
+              <li>Usuario: Número de habitación o voucher proporcionado</li>
+              <li>
+                Contraseña: Código de acceso (verificar mayúsculas/minúsculas)
+              </li>
+            </ul>
+
+            <p><strong>2. Limpiar Caché del Navegador</strong></p>
+            <ul>
+              <li>Presione Ctrl+Shift+R (Windows) o Cmd+Shift+R (Mac)</li>
+              <li>Cierre y vuelva a abrir el navegador</li>
+            </ul>
+
+            <p><strong>3. Contactar Recepción</strong></p>
+            <ul>
+              <li>Teléfono interno: Marque 0</li>
+              <li>WhatsApp: +1 (555) 123-4567</li>
+              <li>Visite recepción en persona</li>
+            </ul>
+          </div>
+        </div>
+        <button onclick="closeHelp()" class="btn btn-primary">Cerrar</button>
+      </div>
+    </div>
+
+    <script>
+      // Funciones para el modal de ayuda
+      function showHelp() {
+        document.getElementById("helpModal").style.display = "block";
+      }
+
+      function closeHelp() {
+        document.getElementById("helpModal").style.display = "none";
+      }
+
+      // Cerrar modal al hacer clic fuera
+      document.addEventListener("click", function (e) {
+        if (e.target.id === "helpModal") {
+          closeHelp();
+        }
+      });
+
+      // Efectos visuales al cargar
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animación de entrada
+        const container = document.querySelector(".error-container");
+        container.style.opacity = "0";
+        container.style.transform = "translateY(50px) scale(0.9)";
+
+        setTimeout(() => {
+          container.style.transition = "all 0.8s ease-out";
+          container.style.opacity = "1";
+          container.style.transform = "translateY(0) scale(1)";
+        }, 100);
+
+        // Auto-focus en el primer botón
+        const firstButton = document.querySelector(".btn-primary");
+        if (firstButton) {
+          firstButton.focus();
+        }
+
+        // Efecto de hover en botones
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((button) => {
+          button.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-2px)";
+          });
+
+          button.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+          });
+        });
+      });
+
+      // Contador regresivo opcional (descomentarr si se desea usar)
+      /*
+      let countdown = 30;
+      const countdownElement = document.createElement('div');
+      countdownElement.className = 'countdown';
+      countdownElement.innerHTML = `Redirección automática en ${countdown} segundos`;
+      
+      const container = document.querySelector('.error-container');
+      container.appendChild(countdownElement);
+      
+      const timer = setInterval(() => {
+        countdown--;
+        countdownElement.innerHTML = `Redirección automática en ${countdown} segundos`;
+        
+        if (countdown <= 0) {
+          clearInterval(timer);
+          window.history.back();
+        }
+      }, 1000);
+      */
+
+      // Manejo de teclas
+      document.addEventListener("keydown", function (e) {
+        // Presionar Enter para intentar nuevamente
+        if (e.key === "Enter") {
+          window.history.back();
+        }
+        // Presionar Escape para cerrar modal
+        if (e.key === "Escape") {
+          closeHelp();
+        }
+      });
+
+      // Logging de errores para debugging (opcional)
+      console.log("Portal Error Page Loaded");
+      console.log("Portal Message:", "$PORTAL_MESSAGE$");
+      console.log("Timestamp:", new Date().toISOString());
+    </script>
+  </body>
+</html>
